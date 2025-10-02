@@ -457,3 +457,37 @@ body {
   transition: width 0.3s ease;
   border-radius: 4px;
 }
+
+.admin-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.admin-section h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.admin-form {
+    display: grid;
+    gap: 15px;
+}
+.admin-form input, .admin-form textarea, .admin-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.admin-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+#positions-list {
+    margin-top: 20px;
+}
