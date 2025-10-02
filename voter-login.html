@@ -3,68 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cast Your Vote - UNIZIK Voting System</title>
+    <title>Voter Login & Ballot - UNIZIK Voting System</title>
     <link rel="stylesheet" href="styles/main.css">
-    <style>
-        .voting-section {
-            margin-bottom: 40px;
-        }
-        .candidate-list {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .candidate-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .candidate-photo {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-        .vote-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        #ballot-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>Cast Your Vote</h1>
+                <img src="https://ipfs.io/ipfs/bafkreifly2gblxs4iywdeogin3yotlhfyaxyynlpjgaqni6ht5inzvhu6a" alt="UNIZIK Logo">
+                <h1>UNIZIK Decides</h1>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">Home</a>
+                <a href="voter-registration.html" class="nav-link">Register</a>
                 <a href="voter-login.html" class="nav-link active">Vote</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="admin-login.html" class="nav-link admin-link">Admin</a>
             </nav>
         </div>
     </header>
 
     <main class="main">
         <div class="container">
-            <h2>Electoral Ballot</h2>
-            <div id="ballot-container">
+            <!-- Voter Login Form -->
+            <div id="login-section">
+                <div class="form-container">
+                    <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">Voter Login</h2>
+                    <form id="voter-login-form">
+                        <div class="form-group">
+                            <label for="student-id">Student ID</label>
+                            <input type="text" id="student-id" placeholder="Enter your Student ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Login to Vote</button>
+                    </form>
+                    <p id="login-message" class="error-message" style="text-align: center; margin-top: 1rem;"></p>
+                    <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="voter-registration.html">Register here</a>.</p>
                 </div>
+            </div>
+
+            <!-- Ballot Section (hidden by default) -->
+            <div id="ballot-section" style="display: none;">
+                <div class="page-header">
+                    <h2>Electoral Ballot</h2>
+                    <p>Select one candidate for each position and cast your vote.</p>
+                    <div id="election-timer"></div>
+                </div>
+                <div id="ballot-container">
+                    <!-- Positions and candidates will be loaded here -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button id="submit-vote" class="btn btn-primary" style="font-size: 1.2rem;">Submit Your Vote</button>
+                </div>
+                 <p id="vote-status-message" style="text-align: center; margin-top: 1rem;"></p>
+            </div>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nnamdi Azikiwe University - Blockchain Voting System</p>
+        </div>
+    </footer>
+
     <script src="scripts/voter-login.js"></script>
 </body>
 </html>

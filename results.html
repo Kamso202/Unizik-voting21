@@ -10,8 +10,8 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>UNIZIK Voting System</h1>
-                <p>Blockchain-Based University Elections</p>
+                <img src="https://ipfs.io/ipfs/bafkreifly2gblxs4iywdeogin3yotlhfyaxyynlpjgaqni6ht5inzvhu6a" alt="UNIZIK Logo">
+                <h1>UNIZIK Decides</h1>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">Home</a>
@@ -33,61 +33,8 @@
         </section>
 
         <section class="content-section">
-            <div class="container">
-                <!-- Election Statistics -->
-                <div class="features-grid" style="margin-bottom: 3rem;">
-                    <div class="card">
-                        <h3>Total Votes Cast</h3>
-                        <div class="vote-count" id="totalVotes">0</div>
-                    </div>
-                    <div class="card">
-                        <h3>Registered Voters</h3>
-                        <div class="vote-count" id="totalVoters">0</div>
-                    </div>
-                    <div class="card">
-                        <h3>Voter Turnout</h3>
-                        <div class="vote-count" id="voterTurnout">0%</div>
-                    </div>
-                    <div class="card">
-                        <h3>Election Status</h3>
-                        <div class="vote-count" style="font-size: 1rem;" id="electionStatus">Active</div>
-                    </div>
-                </div>
-
-                <!-- Results Chart -->
-                <div class="card">
-                    <h3>Vote Distribution</h3>
-                    <div id="resultsChart"></div>
-                </div>
-
-                <!-- Detailed Results -->
-                <div class="card">
-                    <h3>Candidate Results</h3>
-                    <div id="candidateResults"></div>
-                </div>
-
-                <!-- Winner Announcement -->
-                <div id="winnerAnnouncement" class="card" style="display: none;">
-                    <h3>🏆 Election Winner</h3>
-                    <div id="winnerDetails"></div>
-                </div>
-
-                <!-- Blockchain Verification -->
-                <div class="card">
-                    <h3>Blockchain Verification</h3>
-                    <p>All votes are stored on our blockchain system ensuring transparency and immutability.</p>
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <button onclick="verifyBlockchain()" class="btn btn-primary">Verify Blockchain Integrity</button>
-                        <button onclick="showBlockchainExplorer()" class="btn btn-secondary">View Blockchain Explorer</button>
-                    </div>
-                    <div id="verificationResult" style="margin-top: 1rem;"></div>
-                </div>
-
-                <!-- Auto-refresh notice -->
-                <div style="text-align: center; margin-top: 2rem; color: #666;">
-                    <p>Results update automatically every 30 seconds</p>
-                    <button onclick="refreshResults()" class="btn btn-secondary">Refresh Now</button>
-                </div>
+            <div class="container" id="results-container">
+                <!-- Results will be dynamically inserted here -->
             </div>
         </section>
     </main>
@@ -98,7 +45,6 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
     <script src="scripts/results.js"></script>
 </body>
 </html>

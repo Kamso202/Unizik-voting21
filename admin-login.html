@@ -5,45 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - UNIZIK Voting System</title>
     <link rel="stylesheet" href="styles/main.css">
-    <style>
-        .login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .login-form input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .btn-login {
-            background-color: #007bff;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #login-message {
-            text-align: center;
-            margin-top: 15px;
-            color: red;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>Admin Login</h1>
+                <img src="https://ipfs.io/ipfs/bafkreifly2gblxs4iywdeogin3yotlhfyaxyynlpjgaqni6ht5inzvhu6a" alt="UNIZIK Logo">
+                <h1>UNIZIK Decides</h1>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">Home</a>
@@ -54,16 +22,20 @@
     </header>
 
     <main class="main">
-        <div class="container">
-            <div class="login-container">
-                <h3>Admin Portal</h3>
-                <form id="admin-login-form" class="login-form">
-                    <input type="text" id="username" placeholder="Username" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <button type="submit" class="btn-login">Login</button>
-                </form>
-                <p id="login-message"></p>
-            </div>
+        <div class="form-container">
+            <h3>Admin Portal</h3>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p id="login-message" class="error-message"></p>
         </div>
     </main>
 

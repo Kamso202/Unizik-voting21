@@ -10,9 +10,11 @@
     <header class="header">
         <div class="container">
             <div class="logo">
+                <img src="https://ipfs.io/ipfs/bafkreifly2gblxs4iywdeogin3yotlhfyaxyynlpjgaqni6ht5inzvhu6a" alt="UNIZIK Logo">
                 <h1>Admin Dashboard</h1>
             </div>
             <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="#" class="nav-link" id="logout-link">Logout</a>
             </nav>
         </div>
@@ -20,13 +22,37 @@
 
     <main class="main">
         <div class="container">
-            <h2>Welcome, Admin!</h2>
-            <p>Manage electoral positions and candidates.</p>
+            <h2 style="color: var(--primary-blue); margin-bottom: 2rem;">Welcome, Admin!</h2>
 
+            <!-- Manage Election Period -->
             <div class="admin-section">
-                <h3>Add New Electoral Position</h3>
+                <h3>Manage Election Period</h3>
+                <form id="election-form" class="admin-form">
+                    <div class="form-group">
+                        <label for="election-name">Election Name:</label>
+                        <input type="text" id="election-name" placeholder="E.g., 2024 SUG Elections" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="election-start">Start Time:</label>
+                        <input type="datetime-local" id="election-start" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="election-end">End Time:</label>
+                        <input type="datetime-local" id="election-end" required>
+                    </div>
+                    <button type="submit" class="admin-button">Set Election Time</button>
+                </form>
+                <div id="election-status"></div>
+            </div>
+
+            <!-- Add New Electoral Position -->
+            <div class="admin-section">
+                <h3>Manage Electoral Positions</h3>
                 <form id="add-position-form" class="admin-form">
-                    <input type="text" id="position-name" name="position-name" placeholder="E.g., President" required>
+                    <div class="form-group">
+                         <label for="position-name">Position Name:</label>
+                        <input type="text" id="position-name" name="position-name" placeholder="E.g., President" required>
+                    </div>
                     <button type="submit" class="admin-button">Add Position</button>
                 </form>
                 <div id="positions-list">
@@ -35,20 +61,59 @@
                 </div>
             </div>
 
+            <!-- Add New Candidate -->
             <div class="admin-section">
-                <h3>Add New Candidate</h3>
-                <form id="add-candidate-form" class="admin-form">
-                    <input type="text" id="candidate-name" name="candidate-name" placeholder="Candidate Name" required>
-                    <select id="candidate-position" name="candidate-position" required>
-                        <option value="">Select a position...</option>
-                    </select>
-                    <input type="text" id="candidate-image" name="candidate-image" placeholder="Image URL (e.g., /images/candidate.jpg)" required>
-                    <textarea id="candidate-manifesto" name="candidate-manifesto" rows="4" placeholder="Candidate Manifesto" required></textarea>
-                    <button type="submit" class="admin-button">Add Candidate</button>
+                <h3>Manage Candidates</h3>
+                <form id="add-candidate-form" class="admin-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="candidate-name">Candidate Name:</label>
+                        <input type="text" id="candidate-name" name="candidate-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidate-position">Electoral Position:</label>
+                        <select id="candidate-position" name="candidate-position" required>
+                            <option value="">Select a position...</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="candidate-image">Image URL:</label>
+                        <input type="text" id="candidate-image" name="candidate-image" placeholder="https://..." required>
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="candidate-manifesto">Candidate Manifesto:</label>
+                        <textarea id="candidate-manifesto" name="candidate-manifesto" rows="4" placeholder="Share your vision..." required></textarea>
+                    </div>
+                    <button type="submit" class="admin-button" style="grid-column: 1 / -1;">Add Candidate</button>
                 </form>
             </div>
+
+             <!-- Register New Voter -->
+            <div class="admin-section">
+                <h3>Register New Voter</h3>
+                <form id="voter-registration-form" class="admin-form">
+                     <div class="form-group">
+                        <label for="voter-student-id">Student ID:</label>
+                        <input type="text" id="voter-student-id" placeholder="E.g., 2020123456" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="voter-metamask-address">MetaMask Address:</label>
+                        <input type="text" id="voter-metamask-address" placeholder="0x..." required>
+                    </div>
+                     <div class="form-group">
+                        <label for="voter-password">Temporary Password:</label>
+                        <input type="password" id="voter-password" placeholder="Create a password" required>
+                    </div>
+                    <button type="submit" class="admin-button">Register Voter</button>
+                </form>
+            </div>
+
         </div>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nnamdi Azikiwe University - Blockchain Voting System</p>
+        </div>
+    </footer>
     <script src="scripts/admin.js"></script>
 </body>
 </html>
