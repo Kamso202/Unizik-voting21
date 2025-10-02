@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast Your Vote - UNIZIK Voting System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>UNIZIK Voting System</h1>
+                <p>Blockchain-Based University Elections</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="about.html" class="nav-link">About</a>
+                <button onclick="logout()" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h2>Cast Your Vote</h2>
+                <p id="voterWelcome">Welcome, Voter!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Voting Status -->
+                <div id="votingStatus" class="card" style="margin-bottom: 2rem;">
+                    <h3>Voting Status</h3>
+                    <div id="statusContent"></div>
+                </div>
+
+                <!-- Candidates List -->
+                <div id="candidatesSection" class="card">
+                    <h3>Select Your Candidate</h3>
+                    <p style="margin-bottom: 2rem; color: #666;">
+                        Choose one candidate below. Once you cast your vote, it cannot be changed due to blockchain immutability.
+                    </p>
+                    <div id="candidatesList"></div>
+                    
+                    <div id="voteConfirmation" style="display: none; margin-top: 2rem; padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px;">
+                        <h4>Confirm Your Vote</h4>
+                        <p>You have selected: <strong id="selectedCandidateName"></strong></p>
+                        <p style="color: #dc3545; font-weight: 600; margin: 1rem 0;">
+                            ⚠️ Warning: This action cannot be undone. Your vote will be permanently recorded on the blockchain.
+                        </p>
+                        <div style="display: flex; gap: 1rem;">
+                            <button id="confirmVoteBtn" class="btn btn-primary">Confirm Vote</button>
+                            <button id="cancelVoteBtn" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Info -->
+                <div class="card">
+                    <h3>Blockchain Information</h3>
+                    <p>Your vote will be stored as an immutable block in our blockchain system with the following properties:</p>
+                    <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <li>Unique hash-based identification</li>
+                        <li>Timestamp verification</li>
+                        <li>Cryptographic integrity</li>
+                        <li>Tamper-proof storage</li>
+                    </ul>
+                    <div id="blockchainPreview" style="background-color: #f8f9fa; padding: 1rem; border-radius: 5px; font-family: monospace; font-size: 0.9rem;">
+                        <strong>Sample Block Structure:</strong><br>
+                        {<br>
+                        &nbsp;&nbsp;"blockId": "abc123...",<br>
+                        &nbsp;&nbsp;"voterId": "hashed_voter_id",<br>
+                        &nbsp;&nbsp;"candidateId": "candidate_selection",<br>
+                        &nbsp;&nbsp;"timestamp": "2024-01-01T12:00:00Z",<br>
+                        &nbsp;&nbsp;"hash": "sha256_hash",<br>
+                        &nbsp;&nbsp;"previousHash": "previous_block_hash"<br>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nnamdi Azikiwe University - Blockchain Voting System</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/voting.js"></script>
+</body>
+</html>

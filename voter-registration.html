@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Registration - UNIZIK Voting System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>UNIZIK Voting System</h1>
+                <p>Blockchain-Based University Elections</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="voter-registration.html" class="nav-link active">Register</a>
+                <a href="voter-login.html" class="nav-link">Vote</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="admin-login.html" class="nav-link admin-link">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h2>Voter Registration</h2>
+                <p>Register to participate in university elections</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="voterRegistrationForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="matricNumber">Matric Number:</label>
+                            <input type="text" id="matricNumber" name="matricNumber" required pattern="[0-9]{4}/[0-9]{6}" placeholder="e.g., 2020/123456">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="department">Department:</label>
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Engineering">Engineering</option>
+                                <option value="Medicine">Medicine</option>
+                                <option value="Law">Law</option>
+                                <option value="Business Administration">Business Administration</option>
+                                <option value="Arts">Arts</option>
+                                <option value="Sciences">Sciences</option>
+                                <option value="Education">Education</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required minlength="6">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Register</button>
+                    </form>
+                    
+                    <div style="margin-top: 1rem; text-align: center;">
+                        <p>Already registered? <a href="voter-login.html">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nnamdi Azikiwe University - Blockchain Voting System</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/voter-registration.js"></script>
+</body>
+</html>

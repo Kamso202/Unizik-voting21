@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - UNIZIK Voting System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .admin-section {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .admin-section h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .admin-form {
+            display: grid;
+            gap: 15px;
+        }
+        .admin-form input, .admin-form textarea, .admin-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .admin-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: fit-content;
+        }
+        #positions-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Admin Dashboard</h1>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link" id="logout-link">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h2>Welcome, Admin!</h2>
+            <p>Manage electoral positions and candidates.</p>
+
+            <div class="admin-section">
+                <h3>Add New Electoral Position</h3>
+                <form id="add-position-form" class="admin-form">
+                    <input type="text" id="position-name" name="position-name" placeholder="E.g., President" required>
+                    <button type="submit" class="admin-button">Add Position</button>
+                </form>
+                <div id="positions-list">
+                    <h4>Current Positions:</h4>
+                    <ul id="positions-ul"></ul>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <h3>Add New Candidate</h3>
+                <form id="add-candidate-form" class="admin-form">
+                    <input type="text" id="candidate-name" name="candidate-name" placeholder="Candidate Name" required>
+                    <select id="candidate-position" name="candidate-position" required>
+                        <option value="">Select a position...</option>
+                    </select>
+                    <input type="text" id="candidate-image" name="candidate-image" placeholder="Image URL (e.g., /images/candidate.jpg)" required>
+                    <textarea id="candidate-manifesto" name="candidate-manifesto" rows="4" placeholder="Candidate Manifesto" required></textarea>
+                    <button type="submit" class="admin-button">Add Candidate</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>

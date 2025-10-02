@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast Your Vote - UNIZIK Voting System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .voting-section {
+            margin-bottom: 40px;
+        }
+        .candidate-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .candidate-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .candidate-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .vote-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #ballot-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Cast Your Vote</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="voter-login.html" class="nav-link active">Vote</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h2>Electoral Ballot</h2>
+            <div id="ballot-container">
+                </div>
+        </div>
+    </main>
+    <script src="scripts/voter-login.js"></script>
+</body>
+</html>

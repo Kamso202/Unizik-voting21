@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results - UNIZIK Voting System</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>UNIZIK Voting System</h1>
+                <p>Blockchain-Based University Elections</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="voter-registration.html" class="nav-link">Register</a>
+                <a href="voter-login.html" class="nav-link">Vote</a>
+                <a href="results.html" class="nav-link active">Results</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="admin-login.html" class="nav-link admin-link">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-header">
+            <div class="container">
+                <h2>Election Results</h2>
+                <p>Real-time voting results powered by blockchain technology</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <!-- Election Statistics -->
+                <div class="features-grid" style="margin-bottom: 3rem;">
+                    <div class="card">
+                        <h3>Total Votes Cast</h3>
+                        <div class="vote-count" id="totalVotes">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Registered Voters</h3>
+                        <div class="vote-count" id="totalVoters">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Voter Turnout</h3>
+                        <div class="vote-count" id="voterTurnout">0%</div>
+                    </div>
+                    <div class="card">
+                        <h3>Election Status</h3>
+                        <div class="vote-count" style="font-size: 1rem;" id="electionStatus">Active</div>
+                    </div>
+                </div>
+
+                <!-- Results Chart -->
+                <div class="card">
+                    <h3>Vote Distribution</h3>
+                    <div id="resultsChart"></div>
+                </div>
+
+                <!-- Detailed Results -->
+                <div class="card">
+                    <h3>Candidate Results</h3>
+                    <div id="candidateResults"></div>
+                </div>
+
+                <!-- Winner Announcement -->
+                <div id="winnerAnnouncement" class="card" style="display: none;">
+                    <h3>🏆 Election Winner</h3>
+                    <div id="winnerDetails"></div>
+                </div>
+
+                <!-- Blockchain Verification -->
+                <div class="card">
+                    <h3>Blockchain Verification</h3>
+                    <p>All votes are stored on our blockchain system ensuring transparency and immutability.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <button onclick="verifyBlockchain()" class="btn btn-primary">Verify Blockchain Integrity</button>
+                        <button onclick="showBlockchainExplorer()" class="btn btn-secondary">View Blockchain Explorer</button>
+                    </div>
+                    <div id="verificationResult" style="margin-top: 1rem;"></div>
+                </div>
+
+                <!-- Auto-refresh notice -->
+                <div style="text-align: center; margin-top: 2rem; color: #666;">
+                    <p>Results update automatically every 30 seconds</p>
+                    <button onclick="refreshResults()" class="btn btn-secondary">Refresh Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nnamdi Azikiwe University - Blockchain Voting System</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/results.js"></script>
+</body>
+</html>
